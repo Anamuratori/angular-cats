@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <div routerLink="/" class="c-pointer">Sistema de Gatinhos</div>
+
+    <div>
+        <button mat-flat-button color="primary" (click)='goToSearch()'>
+            Buscar
+        </button>
+
+        <button mat-flat-button color="primary" routerLink="cats/new">
+            Cadastrar
+        </button>
+    </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

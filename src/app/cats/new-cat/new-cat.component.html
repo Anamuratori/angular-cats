@@ -1,0 +1,47 @@
+<h2>{{editMode ? 'Editar' : 'Cadastrar'}} gato</h2>
+
+<form [formGroup] = "formCat" (ngSubmit)=" editMode? updateCat() : createCat()">
+<p>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name"/>
+        <mat-error>Campo obrigatório</mat-error>
+    </mat-form-field>
+</p>
+
+<p>
+    <mat-form-field>
+        <mat-label>Length</mat-label>
+        <input matInput formControlName="length" type="number"/>
+        <mat-error>Campo obrigatório</mat-error>
+    </mat-form-field>
+</p>
+<p>
+    <mat-form-field>
+        <mat-label>Weight</mat-label>
+        <input matInput formControlName="weight" type="number"/>
+    </mat-form-field>
+
+</p>
+<p>
+    <mat-form-field>
+        <mat-label>Race</mat-label>
+        <input matInput formControlName="race"/>
+    </mat-form-field>
+
+</p>
+
+<button mat-flat-button
+color="primary"
+[disabled]="formCat.invalid || formCat.pristine"
+type="submit">
+{{editMode? "Atualizar" : "Cadastrar"}}
+</button>
+
+<button mat-stroked-button
+type="reset"
+color="primary">
+Limpar
+</button>
+
+</form>
